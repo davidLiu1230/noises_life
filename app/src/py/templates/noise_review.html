@@ -1,0 +1,71 @@
+{% extends "noise_review_layout.html" %}
+{% block noise_review_header %}
+  <div class="header">
+  </div>
+{% endblock %}
+{% block noise_review_form %}
+  <div class="newReview">
+    <form action="", method="post">
+      <div class="newReviewField">
+          <span>Your Name</span>
+          <input type="text" name="name" placeholder="Bart Simpson" data-toggle="tooltip" trigger="click" data-placement="right" title="Optional">
+      </div>
+      <div class="newReviewField">
+          <span>E-mail</span>
+          <input type="email" name="email" data-toggle="tooltip" trigger="click" data-placement="right" title="In case someone tries to spam us" placeholder="bsimpson@gmail.com" required>
+      </div>
+      <div class="newReviewField what">
+        <span>Origin of the Noise: </span>
+        <select name="origin">
+          <option value="0">neighbors</option>
+          <option value="1">traffic</option>
+          <option value="2">landlord/property management</option>
+          <option value="3">nearby buisinessess/shops</option>
+          <option value="4">nature</option>
+          <option value="5">other</option>
+        </select>
+      </div>
+      <div class="newReviewField when">
+        <span>From</span>
+        <input name="from" type="time"></input>
+        <span>To</span>
+        <input name="to" type="time"></input>
+        <select name="frequency1">
+          <option value="0">Every</option>
+        </select>
+        <select name="frequency2">
+          <option value="0"></option>
+          <option value="1">Other</option>
+        </select>
+        <select name="date">
+          <option value="0">Day</option>
+          <option value="1">Weekday</option>
+          <option value="2">Weekend</option>
+          <option value="3">Monday</option>
+          <option value="4">Tuesday</option>
+          <option value="5">Wednesday</option>
+          <option value="6">Thursday</option>
+          <option value="7">Friday</option>
+          <option value="8">Saturday</option>
+          <option value="9">Sunday</option>
+          <option value="10">Week</option>
+          <option value="11">Month</option>
+        </select>
+      </div>
+      <div class="newReviewField">
+        <p>What else should we know about this place: </p>
+        <textarea name="message" rows="5" cols="30" placeholder="Write down anything that you think is helpful to future viewers of this place."></textarea>
+      </div>
+      <div class="newReviewField">
+        <input type="submit" value="Submit">
+      </div>
+      <div class="g-recaptcha" data-sitekey="6LeWSQwUAAAAAJoHU_TeAgBxOyaoNikjjKPxBXAm"></div>
+    </form>
+  </div>
+{% endblock %}
+{% block noise_review_script %}
+  <script>
+    $(document).ready(function(){$('[data-toggle="tooltip"]').tooltip();});
+    
+  </script>
+{% endblock %}

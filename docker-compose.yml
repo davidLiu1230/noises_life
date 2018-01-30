@@ -1,0 +1,26 @@
+version: "2.0"
+services:
+  # Node 1, a web server
+  app:
+    build: .
+    ports:
+      # nginx listens to port 80
+      - "8080:80"
+      # Supervisor http access
+      - "9001:9001"
+    links:
+      - redis
+      - mongo
+    # So that wysiwyg
+    volumes:
+      - ./app:/srv/app
+    container_name: app
+    tty: true
+  # web cache
+  redis:
+    image: "redis:alpine"
+    container_name: redis
+  # https://hub.docker.com/_/mongo/
+  mongo:
+    image: "mongo:3"
+    container_name: mongo

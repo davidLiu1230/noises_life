@@ -1,0 +1,5 @@
+requests
+flask
+Flask-PyMongo
+uwsgi
+pytest

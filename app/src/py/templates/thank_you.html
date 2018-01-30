@@ -1,0 +1,13 @@
+{% extends "common.html" %}
+{% block content %}
+  {%- if data.get('is_g_recaptcha_verified'): -%}
+    <h1>You are verified by google recaptcha!</h1>
+    <h3>your g-recaptcha response value is:</h3>
+    <h4>{{ data['g-recaptcha-response'] }}</h4>
+  {%- else %}
+    <h1>You Suck! Here's your info below</h1>
+    {% for key, val in data.iteritems(): %}
+      <h2>{{ key }}: {{ val }}</h2>
+    {% endfor %}
+  {%- endif %}
+{% endblock %}
